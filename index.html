@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our love 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #ffcccc);
+      color: #4d004d;
+      text-align: center;
+    }
+    nav {
+      background: #ffb6c1;
+      padding: 1rem;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      font-weight: bold;
+    }
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .page {
+      display: none;
+      padding: 30px;
+    }
+    .active {
+      display: block;
+    }
+    #timer {
+      font-size: 2.5rem;
+      text-align: center;
+      margin: 1rem auto;
+      padding: 1rem;
+      background: #ffe4ec;
+      border: 2px dashed #ff69b4;
+      border-radius: 12px;
+      width: fit-content;
+      max-width: 90%;
+      color: #c71585;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+    .gallery img {
+      max-width: 150px;
+      margin: 10px;
+      border-radius: 12px;
+    }
+    input[type="file"] {
+      margin-top: 10px;
+    }
+    .letter {
+      background: #fff;
+      padding: 1rem;
+      margin: 1rem auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      font-style: italic;
+      line-height: 1.6;
+    }
+    h3{
+      background: #d30c73;
+      padding: 10px;
+      position: sticky;
+    }
+    .big-letter-wrapper {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .big-letter {
+      display: inline-block;
+      background: #fff;
+      padding: 2rem;
+      max-width: 600px;
+      border: 2px solid #ffb6c1;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      transform: translateY(200px);
+      opacity: 0;
+      transition: all 1s ease;
+    }
+    .big-letter.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="#" onclick="showPage('home')">Головна</a>
+  <a href="#" onclick="showPage('photos')">Фоточки</a>
+  <a href="#" onclick="showPage('memories')">Спогади</a>
+</nav>
+
+<div id="home" class="page active">
+  <h1>💖 LOVE YOU ️️‍💖</h1>
+  <p>Ми разом вже:</p>
+  <div id="timer"></div>
+  <div class="big-letter-wrapper">
+    <button onclick="document.getElementById('bigLetter').classList.add('show')">💌 Відкрити лист</button>
+    <div id="bigLetter" class="big-letter">
+      Привіт, коханий 💖<br><br>
+      Місяць із тобою пролетів, мов одна чарівна мить. Дякую за всі усмішки, ніжність і твою присутність. Ти робиш моє життя світлішим кожного дня. Люблю тебе! 💕
+    </div>
+  </div>
+</div>
+
+<div id="photos" class="page">
+  <h2>📸 Photos</h2>
+  <b><p>Додавай сюди наші фоточки (для цього, відповідно, треба їх робити💋)</p></b>
+  <input type="file" id="fileInput" accept="image/*" multiple>
+  <div class="gallery" id="gallery"></div>
+</div>
+
+<div id="memories" class="page">
+  <h2>✨“He’s more myself than I am. Whatever our souls are made of, his and mine are the same.” </h2>
+  <b><p style="text-align: right"> — Emily Bronte</p></b>
+  <i><h5>Це тільки початок 💞</h5></i>
+  <div class="subsection">
+    <h3>1 місяць</h3>
+    <div class="letter">
+      Кицюнь, сьогодні рівно місяць, як ти з'явилась в моєму житті, не просто як особлива людина, а як та яку я покохав більше за всіх.
+      Цей місяць був чудовим, сповненим тепла та усмішок, обіймів та любові, так трапився один негаразд, але я зрозумів свою помилку.<br>
+      Ти - моє натхнення, моя підтримка та моє серце.<br>
+      Нехай цей перший місяць разом стане лише початком нашої спільної історії.
+      <br>Я тебе люблю моя киця❤️‍🔥💋
+    </div>
+    <div class="letter">
+      Це дуууже мило, сонце🥺. І попри ті якісь маленькі конфлікти — я рада, що я з саме з тобою. Ти справді став для мене важливою людиною.
+      Я бачу твої старання, ціную твою відкритість і те, що розумієш свої помилки і прагнеш виправитись, до речі, що у тебе дуже добре виходить. Це дуже багато значить для мене, і я це дійсно дуже ціную і поважаю.
+      <br>Сподіваюсь надалі будем справді щасливо і з взаєморозумінням рухатись далі.
+      <br>Я теж тебе дуже люблюююю❤️‍🔥💋🥰
+    </div>
+    <h4 style="text-align:center;">Напиши щось від себе (якщо маєш ще що сказати) ❤️</h4>
+    <form action="https://formspree.io/f/mvgalbgy" method="POST">
+      <textarea name="message" rows="6" placeholder="Напиши тут щось особливе..." required></textarea>
+      <button type="submit">Надіслати</button>
+    </form>
+  </div>
+
+</div>
+
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+
+  const startDate = new Date("2025-04-17T00:00:00");
+  const timer = document.getElementById("timer");
+  setInterval(() => {
+    const now = new Date();
+    const diff = now - startDate;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    timer.innerHTML = `${days} днів, ${hours} год, ${minutes} хв, ${seconds} с`;
+  }, 1000);
+
+  const fileInput = document.getElementById('fileInput');
+  const gallery = document.getElementById('gallery');
+
+  // Завантажити збережені фото при запуску
+  window.addEventListener('load', () => {
+    const savedPhotos = JSON.parse(localStorage.getItem('savedPhotos') || '[]');
+    savedPhotos.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      gallery.appendChild(img);
+    });
+  });
+
+  // Збереження фото в localStorage
+  fileInput.addEventListener('change', () => {
+    const savedPhotos = JSON.parse(localStorage.getItem('savedPhotos') || '[]');
+    Array.from(fileInput.files).forEach(file => {
+      const reader = new FileReader();
+      reader.onload = e => {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        gallery.appendChild(img);
+        savedPhotos.push(e.target.result);
+        localStorage.setItem('savedPhotos', JSON.stringify(savedPhotos));
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+
+</script>
+</body>
+</html>
